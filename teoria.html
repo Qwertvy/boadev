@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOA studios</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@flaticon/flaticon-uicons/css/all/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1 {
+        text-align: center;
+        padding: 50px 20px 30px;
+        font-size: 2.6rem;
+        color: #1e293b;
+      }
+
+      .slider-wrapper {
+        position: relative;
+        padding: 20px 60px 80px;
+      }
+
+      .slider {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+      }
+
+      .slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card {
+        scroll-snap-align: center;
+        min-width: 300px;
+        background: white;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: 0.7s ease;
+      }
+
+      .card.show {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 22px;
+        text-align: center;
+      }
+
+      .card-content h3 {
+        margin: 8px 0 6px;
+        font-size: 1.5rem;
+        color: #1e293b;
+      }
+
+      .card-content p {
+        color: #475569;
+        font-size: 0.95rem;
+      }
+
+      .level {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .easy {
+        background: #dcfce7;
+        color: #166534;
+      }
+      .medium {
+        background: #fef9c3;
+        color: #854d0e;
+      }
+      .hard {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 10px;
+        background: #e5e7eb;
+        border-radius: 10px;
+        margin: 12px 0 18px;
+        overflow: hidden;
+      }
+
+      .progress {
+        height: 100%;
+        background: #22c55e;
+        border-radius: 10px;
+        transition: 0.4s;
+      }
+
+      .card-content button {
+        padding: 13px 30px;
+        border: none;
+        background: #22c55e;
+        color: white;
+        border-radius: 18px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .card-content button:hover {
+        transform: scale(1.07);
+        background: #16a34a;
+      }
+
+      .card:hover {
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px;
+        height: 52px;
+        border: none;
+        border-radius: 50%;
+        font-size: 2rem;
+        background: white;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .arrow:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .left {
+        left: 12px;
+      }
+      .right {
+        right: 12px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .slider-wrapper {
+          padding: 20px 20px 60px;
+        }
+
+        .arrow {
+          display: none;
+        }
+
+        .card {
+          min-width: 260px;
+        }
+      }
+
+      .bubble {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.25;
+        animation: float 8s infinite alternate;
+      }
+
+      .b1 {
+        width: 120px;
+        height: 120px;
+        background: #38bdf8;
+        top: 80px;
+        left: 20px;
+      }
+      .b2 {
+        width: 80px;
+        height: 80px;
+        background: #22c55e;
+        bottom: 60px;
+        right: 40px;
+      }
+      .b3 {
+        width: 60px;
+        height: 60px;
+        background: #facc15;
+        top: 30px;
+        right: 130px;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(35px);
+        }
+      }
+    </style>
+  </head>
+  <body class="hidden">
+    <div id="centrado">
+      <div class="loader"></div>
+    </div>
+    <header>
+      <div class="logo">
+        <img src="BOAISOLOGOTIPO.png" alt="Logo BOA Academy" />
+      </div>
+      <nav>
+        <a href="index.html"><i class="fi fi-rr-home"></i>Inicio</a>
+        <a href="teoria.html"><i class="fi fi-rr-document"></i>Teoría</a>
+        <a href="recursos.html"><i class="fi fi-rr-globe"></i>Recursos</a>
+        <a href="QUIZ.html"><i class="fi fi-rr-apps"></i>Quiz</a>
+        <a href="contacto.html"><i class="fi fi-rr-user"></i>Desarrolladores</a>
+      </nav>
+    </header>
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+
+    <h1>Aprende HTML paso a paso 🚀</h1>
+
+    <div class="slider-wrapper">
+      <button class="arrow left" onclick="move(-1)">❮</button>
+
+      <div class="slider" id="slider">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          />
+          <div class="card-content">
+            <span class="level easy">Básico</span>
+            <h3>Para empezar</h3>
+            <p>Qué es HTML y cómo funciona la web.</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%"></div>
+            </div>
+            <button>Empezar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d"
+          />
+          <div class="card-content">
+            <span class="level easy">Básico</span>
+            <h3>Head</h3>
+            <p>Configuración de la página.</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%"></div>
+            </div>
+            <button>Aprender</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+          />
+          <div class="card-content">
+            <span class="level medium">Intermedio</span>
+            <h3>Body</h3>
+            <p>Contenido visible.</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%"></div>
+            </div>
+            <button>Ver curso</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159"
+          />
+          <div class="card-content">
+            <span class="level medium">Intermedio</span>
+            <h3>Links</h3>
+            <p>Navegación web.</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%"></div>
+            </div>
+            <button>Comenzar</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow right" onclick="move(1)">❯</button>
+    </div>
+
+    <script>
+      const slider = document.getElementById("slider");
+
+      function move(dir) {
+        slider.scrollBy({ left: 320 * dir, behavior: "smooth" });
+      }
+
+      const cards = document.querySelectorAll(".card");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    </script>
+        <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>AprendeWeb</h3>
+          <p>
+            Plataforma interactiva para aprender HTML desde cero, con teoría,
+            práctica y ejercicios en tiempo real.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <a href="#">Para empezar</a>
+          <a href="#">Head</a>
+          <a href="#">Body</a>
+          <a href="#">Links</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="recursos.html">Recursos Online</a>
+          <a href="QUIZ.html">Ejercicios</a>
+          <a href="teoria.html">Teoría</a>
+          <a href="https://chatgpt.com/">IA educativa</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="socials">
+            <a href="#">🌐</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+            <a href="#">🐦</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 AprendeWeb — Hecho para estudiantes
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+    <script src="logica.js"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOA studios</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@flaticon/flaticon-uicons/css/all/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="hidden">
+    <div id="centrado">
+      <div class="loader"></div>
+    </div>
+    <header>
+      <div class="logo">
+        <img src="BOAISOLOGOTIPO.png" alt="Logo BOA Academy" />
+      </div>
+      <nav>
+        <a href="index.html"><i class="fi fi-rr-home"></i>Inicio</a>
+        <a href="teoria.html"><i class="fi fi-rr-document"></i>Teoría</a>
+        <a href="recursos.html"><i class="fi fi-rr-globe"></i>Recursos</a>
+        <a href="QUIZ.html"><i class="fi fi-rr-apps"></i>Quiz</a>
+        <a href="contacto.html"><i class="fi fi-rr-user"></i>Desarrolladores</a>
+      </nav>
+    </header>
+    <div class="slider-cards">
+      <button id="btn-prev" class="nav-arrow nav-left">&#10094;</button>
+
+      <div class="card-item">
+        <img src="img/para-empezar.png" class="card-img" alt="Para empezar" />
+        <h2>Para empezar</h2>
+        <p>HTML es el lenguaje base para crear páginas web.</p>
+      </div>
+
+      <div class="card-item">
+        <img src="img/para-empezar.png" class="card-img" alt="Para empezar" />
+        <h2>Inicio de HTML</h2>
+        <p>Todo documento HTML comienza con una estructura básica.</p>
+      </div>
+
+      <div class="card-item">
+        <img src="img/para-empezar.png" class="card-img" alt="Para empezar" />
+        <h2>Head</h2>
+        <p>El head contiene información que no se ve en la página.</p>
+      </div>
+
+      <div class="card-item">
+        <img src="img/para-empezar.png" class="card-img" alt="Para empezar" />
+        <h2>Body</h2>
+        <p>El body contiene todo el contenido visible del sitio web.</p>
+      </div>
+
+      <button id="btn-next" class="nav-arrow nav-right">&#10095;</button>
+    </div>
+    <footer>
+      <p
+        style="
+          color: white;
+          text-align: center;
+          padding-top: 40px;
+          font-family: Alan Sans;
+        "
+      >
+        © 2025 BOA Studios — Todos los derechos reservados
+      </p>
+    </footer>
+    <script>
+      let currentIndex = 0;
+      const cards = document.querySelectorAll(".card-item");
+      const prevButton = document.getElementById("btn-prev");
+      const nextButton = document.getElementById("btn-next");
+      const totalCards = cards.length;
+
+      function showCard(index) {
+        cards.forEach((card) => card.classList.remove("active"));
+        cards[index].classList.add("active");
+      }
+
+      nextButton.addEventListener("click", () => {
+        if (currentIndex < totalCards - 1) {
+          currentIndex++;
+          showCard(currentIndex);
+        }
+      });
+
+      prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          showCard(currentIndex);
+        }
+      });
+
+      showCard(currentIndex);
+    </script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+    <script src="logica.js"></script>
+  </body>
+</html>

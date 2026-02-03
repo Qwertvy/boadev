@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 70px;
+  background: #ffffff;
+  font-family: "Alan Sans", sans-serif;
+}
+
+i{
+  margin-right: 5px;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #003366;
+  animation: fadeIn 1s ease-in forwards;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 22px 20px;
+  font-size: 18px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #001e3c;
+  color: rgb(255, 255, 255);
+}
+
+#practica {
+  padding: 90px 40px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.titulo-practica {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo-practica {
+  max-width: 650px;
+  margin: 0 auto 60px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.practica-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.practica-card {
+  position: relative;
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.practica-card:hover {
+  transform: translateY(-8px);
+}
+
+.practica-card i {
+  font-size: 2.8rem;
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.practica-card h3 {
+  margin-bottom: 10px;
+}
+
+.practica-card p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.practica-card a {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 25px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.practica-card a:hover {
+  background: #1e40af;
+}
+
+
+.tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e5e7eb;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+
+.destacado {
+  border: 2px solid #2563eb;
+}
+
+.destacado::after {
+  content: "Recomendado";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2563eb;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+.img-recurso {
+  width: 100%;
+  height: 80px;          
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.img-recurso img {
+  max-width: 70px;       
+  max-height: 70px;
+  object-fit: contain;
+}
+

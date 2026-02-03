@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editor HTML Interactivo</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, Arial, sans-serif;
+        background: linear-gradient(135deg, #e3efff, #ffffff);
+        color: #e5e7eb;
+      }
+
+      .contenedor {
+        max-width: 1200px;
+        margin: auto;
+        padding: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        min-height: 100vh;
+      }
+
+      .panel {
+        background: #e3efff;
+        padding: 30px;
+        border-radius: 22px;
+        box-shadow: 0 25px 50px #bbc5d2;
+      }
+
+      h2 {
+        color: #38bdf8;
+      }
+
+      pre {
+        background: #ffffff;
+        padding: 14px;
+        border-radius: 12px;
+        color: #22c55e;
+      }
+
+      .paso {
+        display: none;
+      }
+      .paso.activo {
+        display: block;
+      }
+
+      .preview {
+        margin-top: 20px;
+        background: white;
+        border-radius: 14px;
+        height: 180px;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      button {
+        margin-top: 20px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        border: none;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="contenedor">
+      <div class="panel">
+        <div class="paso activo">
+          <h2>Paso 1: Crear un título</h2>
+          <p>Escribe un título que diga <strong>Hola mundo</strong>.</p>
+          <pre>&lt;h1&gt;Hola mundo&lt;/h1&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>🎉 Excelente</h2>
+          <p>Ya sabes usar títulos en HTML.</p>
+        </div>
+
+        <button id="siguiente">Siguiente</button>
+      </div>
+
+      <div class="panel">
+        <h2>Editor HTML</h2>
+
+        <textarea id="editor"></textarea>
+
+        <div class="preview">
+          <iframe id="resultado"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script>
+      const iframe = document.getElementById("resultado");
+      const pasos = document.querySelectorAll(".paso");
+      let pasoActual = 0;
+
+      const editor = CodeMirror.fromTextArea(
+        document.getElementById("editor"),
+        {
+          mode: "htmlmixed",
+          theme: "eclipse",
+          lineNumbers: true,
+          tabSize: 2,
+        },
+      );
+
+      editor.setValue("<h1>Hola mundo</h1>");
+
+      editor.on("change", () => {
+        const doc = iframe.contentDocument;
+        doc.open();
+        doc.write(editor.getValue());
+        doc.close();
+      });
+
+      document.getElementById("siguiente").onclick = () => {
+        pasos[pasoActual].classList.remove("activo");
+        pasoActual++;
+        if (pasoActual < pasos.length) {
+          pasos[pasoActual].classList.add("activo");
+        }
+      };
+    </script>
+  </body>
+</html>
