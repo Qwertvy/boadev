@@ -47,10 +47,80 @@ nav a {
   transition: 0.3s;
 }
 
+nav {
+  display: flex;
+}
+
 nav a:hover {
   background: #001e3c;
   color: rgb(255, 255, 255);
 }
+
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #003366;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav a {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  #menu-toggle:checked ~ nav {
+    max-height: 300px;
+  }
+
+  
+  #menu-toggle:checked + .menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + .menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+
 
 .bloque {
   width: 100%;
@@ -358,6 +428,91 @@ li {
 
 .plan-card:hover {
   transform: translateY(-6px);
+}
+
+@media (max-width: 768px) {
+
+  /* Bloques principales */
+  .bloque,
+  #b1,
+  #b2,
+  #plan-aprendizaje {
+    flex-direction: column;
+    padding: 60px 25px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  /* Texto */
+  .bloque-texto {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #b1 .bloque-texto h2,
+  #b2 .bloque-texto h2 {
+    font-size: 2.2rem;
+  }
+
+  .bloque-texto p {
+    font-size: 1.1rem;
+  }
+
+  /* Imágenes */
+  #b1 img,
+  #b2 img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* Botón principal */
+  .cta-btn {
+    font-size: 1.05rem;
+    padding: 12px 26px;
+  }
+
+  /* Tarjetas grandes */
+  .tarjetaa {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+
+  /* Cursos */
+  .cursos {
+    gap: 25px;
+  }
+
+  .curso {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .curso-logo {
+    width: 70px !important;
+  }
+
+  /* Títulos */
+  .titulo-cursos {
+    font-size: 2rem;
+  }
+
+  .titulo-plan {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo-plan {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  /* Grid plan */
+  .plan-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .nivel {
@@ -946,24 +1101,20 @@ h1 {
   }
 }
 
-/* =============================== */
-/* ANIMACIONES PROFESIONALES SCROLL */
-/* =============================== */
 
-/* Estado oculto */
 .anim {
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.9s ease;
 }
 
-/* Al activarse */
+
 .anim.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Variantes */
+
 
 .anim-left {
   opacity: 0;
@@ -983,7 +1134,7 @@ h1 {
   transition: all 0.8s ease;
 }
 
-/* activas */
+
 
 .anim-left.show,
 .anim-right.show,
@@ -1063,7 +1214,7 @@ h1 {
   transform:scale(1.1);
 }
 
-/* Parte inferior */
+
 
 .footer-bottom{
   text-align:center;
@@ -1074,7 +1225,7 @@ h1 {
   color:#94a3b8;
 }
 
-/* Responsive */
+
 
 @media(max-width:600px){
   .footer{

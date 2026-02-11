@@ -47,10 +47,80 @@ nav a {
   transition: 0.3s;
 }
 
+nav {
+  display: flex;
+}
+
 nav a:hover {
   background: #001e3c;
   color: rgb(255, 255, 255);
 }
+
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #003366;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav a {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  #menu-toggle:checked ~ nav {
+    max-height: 300px;
+  }
+
+  
+  #menu-toggle:checked + .menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + .menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+
 
 .bloque {
   width: 100%;
