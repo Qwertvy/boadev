@@ -1,11 +1,11 @@
-// LOADER GLOBAL (para todas las páginas)
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("centrado");
 
-  // Habilitar scroll
+
   document.body.classList.remove("hidden");
 
-  // Ocultar loader con pequeña animación
+  
   setTimeout(() => {
     if (loader) {
       loader.style.opacity = "0";
@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
     }
   }, 1200);
 });
-// ANIMACIÓN AL HACER SCROLL
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -32,9 +32,7 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".animar").forEach((el) => {
   observer.observe(el);
 });
-// ===============================
-// VALIDACIONES FORMULARIO CONTACTO
-// ===============================
+
 const form = document.querySelector(".formulario");
 
 if (form) {
@@ -47,24 +45,24 @@ if (form) {
 
     let valido = true;
 
-    // Reset estilos
+   
     [nombre, email, mensaje].forEach((campo) => {
       campo.classList.remove("error");
     });
 
-    // Nombre
+    
     if (nombre.value.trim().length < 3) {
       marcarError(nombre, "El nombre debe tener al menos 3 caracteres");
       valido = false;
     }
 
-    // Email
+   
     if (!emailValido(email.value)) {
       marcarError(email, "Introduce un correo válido");
       valido = false;
     }
 
-    // Mensaje
+    
     if (mensaje.value.trim().length < 10) {
       marcarError(mensaje, "El mensaje debe tener al menos 10 caracteres");
       valido = false;

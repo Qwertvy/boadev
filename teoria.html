@@ -25,11 +25,13 @@
       .slider-wrapper {
         position: relative;
         padding: 20px 60px 80px;
+        
       }
 
       .slider {
         display: flex;
         gap: 30px;
+        border-radius: 35px;
         overflow-x: auto;
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
@@ -43,7 +45,7 @@
         scroll-snap-align: center;
         min-width: 300px;
         background: white;
-
+        border-radius: 35px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         overflow: hidden;
         opacity: 0;
@@ -116,19 +118,21 @@
       }
 
       .card-content button {
-        padding: 13px 30px;
-        border: none;
-        background: #22c55e;
+        background: #4a90e2;
+        padding: 12px 30px;
+        border-radius: 30px;
         color: white;
-        border-radius: 18px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: 0.3s;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 25px;
+        transition: 0.3s ease;
       }
 
       .card-content button:hover {
-        transform: scale(1.07);
-        background: #16a34a;
+        background: #e34f26;
+        transform: translateY(-3px);
       }
 
       .card:hover {
@@ -208,6 +212,11 @@
         right: 130px;
       }
 
+      a{
+        text-decoration: none;
+        color: white;
+      }
+
       @keyframes float {
         from {
           transform: translateY(0);
@@ -252,24 +261,20 @@
 
       <div class="slider" id="slider">
         <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-          />
+          <img src="paraEmpezar.png" />
           <div class="card-content">
             <span class="level easy">Básico</span>
             <h3>Para empezar</h3>
-            <p>Qué es HTML y cómo funciona la web.</p>
+            <p>Como funciona la web.</p>
             <div class="progress-bar">
               <div class="progress" style="width: 100%"></div>
             </div>
-            <button>Empezar</button>
+            <button><a href="paraempezar.html">Empezar</a></button>
           </div>
         </div>
 
         <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d"
-          />
+          <img src="head.png" />
           <div class="card-content">
             <span class="level easy">Básico</span>
             <h3>Head</h3>
@@ -282,9 +287,7 @@
         </div>
 
         <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
-          />
+          <img src="body.png" />
           <div class="card-content">
             <span class="level medium">Intermedio</span>
             <h3>Body</h3>
@@ -297,9 +300,20 @@
         </div>
 
         <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159"
-          />
+          <img src="etiquetasBody.png" />
+          <div class="card-content">
+            <span class="level medium">Intermedio</span>
+            <h3>Etiquetas del Body</h3>
+            <p>Contenido visible.</p>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%"></div>
+            </div>
+            <button>Ver curso</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="links.png" />
           <div class="card-content">
             <span class="level medium">Intermedio</span>
             <h3>Links</h3>
@@ -337,7 +351,7 @@
 
       cards.forEach((card) => observer.observe(card));
     </script>
-        <footer class="footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-col">
           <h3>BOA Estudios</h3>
