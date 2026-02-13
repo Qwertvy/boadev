@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOA studios</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@flaticon/flaticon-uicons/css/all/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, Arial, sans-serif;
+        background: linear-gradient(135deg, #e3efff, #ffffff);
+        color: #e5e7eb;
+      }
+
+      .contenedor {
+        max-width: 1200px;
+        margin: auto;
+        padding: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        min-height: 100vh;
+      }
+
+      .panel {
+        background: rgb(222, 1, 1);
+        padding: 30px;
+        border-radius: 22px;
+        box-shadow: 0 25px 50px #575757;
+      }
+
+      h2 {
+        color: #ffffff;
+      }
+
+      pre {
+        background: #ffffff;
+        padding: 14px;
+        border-radius: 12px;
+        color: green;
+      }
+
+      .paso {
+        display: none;
+      }
+      .paso.activo {
+        display: block;
+      }
+
+      .preview {
+        margin-top: 20px;
+        background: white;
+        border-radius: 14px;
+        height: 180px;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      button {
+        margin-top: 20px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        border: none;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="hidden">
+    <div id="centrado">
+      <div class="loader"></div>
+    </div>
+    <header>
+      <div class="logo">
+        <img src="BOAISOLOGOTIPO.png" alt="Logo BOA Academy" />
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+
+      <label for="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <a href="index.html"><i class="fi fi-rr-home"></i>Inicio</a>
+        <a href="teoria.html"><i class="fi fi-rr-document"></i>Teoría</a>
+        <a href="recursos.html"><i class="fi fi-rr-globe"></i>Recursos</a>
+        <a href="QUIZ.html"><i class="fi fi-rr-apps"></i>Quiz</a>
+        <a href="contacto.html"><i class="fi fi-rr-user"></i>Desarrolladores</a>
+      </nav>
+    </header>
+    <section class="contenedor">
+      <div class="panel">
+        <div class="paso activo">
+          <h2>Paso 1: Empieza tu HTML</h2>
+          <p style="line-height: 2">
+            Empezaremos creando la sintaxis es
+            <strong
+              >para indicarle al navegador qué versión de HTML está usando el
+              documento.</strong
+            ><br />🔹 Indica que el documento usa HTML5. <br />🔹 Activa el modo
+            estándar del navegador.
+          </p>
+          <pre>&lt;!DOCTYPE html&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Paso 2: Empieza tu HTML</h2>
+          <p style="line-height: 2">
+            Ahora escribiremos la etiqueta raíz del documento. <br />🔹 Todo el
+            contenido va dentro de ella. <br />🔹 lang="es" indica que el idioma
+            es español (importante para accesibilidad y SEO).
+          </p>
+          <pre>&lt;html lang="es"&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Paso 3: Empieza tu HTML</h2>
+          <p style="line-height: 2">
+            <strong>&lt;head&gt;</strong> contiene información sobre la página,
+            pero no visible directamente en el contenido.
+          </p>
+          <pre>&lt;head&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Paso 4: Empieza tu HTML</h2>
+          <p style="line-height: 2">
+            🔹 Define la codificación de caracteres. <br>🔹 Permite usar tildes, ñ,
+            símbolos, etc..
+          </p>
+          <pre>&lt;meta charset="UTF-8"&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Paso 5: Empieza tu HTML</h2>
+          <p style="line-height: 2">
+            Es el título que aparece en la pestaña del navegador.
+          </p>
+          <pre>&lt;title&gt;Escribe aqui el nombre que desees&lt;/title&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Paso 6: Empieza tu HTML</h2>
+          <p style="line-height: 2">
+            Cierra la sección de configuración.
+          </p>
+          <pre>&lt;/head>&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Excelente</h2>
+          <p style="line-height: 2">
+            Terminaste la configuracion de tu pagina web, puedes dar "Enter" o "Intro" pero no aparecera en pantalla ya que recordemos <strong>Estamos empezando y configurando la pagina</strong>.
+          </p>
+          <h2>Regresa a los cursos</h2>
+        </div>
+
+        <button class="cta-btn" id="siguiente">Siguiente</button>
+      </div>
+
+      <div class="panel">
+        <h2>Editor HTML</h2>
+
+        <textarea id="editor"></textarea>
+
+        <div class="preview">
+          <iframe id="resultado"></iframe>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>BOA Estudios</h3>
+          <p>
+            Plataforma interactiva para aprender HTML desde cero, con teoría,
+            práctica y ejercicios en tiempo real.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <a href="#">Para empezar</a>
+          <a href="#">Head</a>
+          <a href="#">Body</a>
+          <a href="#">Links</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="recursos.html">Recursos Online</a>
+          <a href="QUIZ.html">Ejercicios</a>
+          <a href="teoria.html">Teoría</a>
+          <a href="https://chatgpt.com/">IA educativa</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="socials">
+            <a href="#">🌐</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+            <a href="#">🐦</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 BOA Estudios — Hecho para estudiantes
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script>
+      const iframe = document.getElementById("resultado");
+      const pasos = document.querySelectorAll(".paso");
+      let pasoActual = 0;
+
+      const editor = CodeMirror.fromTextArea(
+        document.getElementById("editor"),
+        {
+          mode: "htmlmixed",
+          theme: "eclipse",
+          lineNumbers: true,
+          tabSize: 2,
+        },
+      );
+
+      editor.setValue("");
+
+      editor.on("change", () => {
+        const doc = iframe.contentDocument;
+        doc.open();
+        doc.write(editor.getValue());
+        doc.close();
+      });
+
+      document.getElementById("siguiente").onclick = () => {
+        pasos[pasoActual].classList.remove("activo");
+        pasoActual++;
+        if (pasoActual < pasos.length) {
+          pasos[pasoActual].classList.add("activo");
+        }
+      };
+    </script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+    <script src="logica.js"></script>
+    <script src="animaciones.js"></script>
+  </body>
+</html>
