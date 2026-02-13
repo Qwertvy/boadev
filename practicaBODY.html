@@ -117,66 +117,84 @@
     <section class="contenedor">
       <div class="panel">
         <div class="paso activo">
-          <h2>Paso 1: Empieza tu HTML</h2>
+          <h2>Paso 1: Desarrolla tu HTML</h2>
           <p style="line-height: 2">
-            Empezaremos creando la sintaxis es
+            Empezaremos donde lo dejamos y continuaremos
             <strong
-              >para indicarle al navegador qué versión de HTML está usando el
-              documento.</strong
-            ><br />🔹 Indica que el documento usa HTML5. <br />🔹 Activa el modo
-            estándar del navegador.
+              >&lt;body&gt;</strong
+            ><br />El <body> es la parte del documento HTML donde va todo lo que el usuario ve en la página:
+              <br>
+              Textos
+              <br>
+              Imágenes
+              <br>
+              Botones
+              <br>
+              Enlaces
+              <br>
+              Formularios
+              <br>
+              Videos
+              <br>
+              etc.
+              <br>
+              Todo lo visual va aquí.
           </p>
-          <pre>&lt;!DOCTYPE html&gt;</pre>
+          <pre>&lt;body&gt;</pre>
         </div>
 
         <div class="paso">
-          <h2>Paso 2: Empieza tu HTML</h2>
+          <h2>Paso 2: Desarrolla tu HTML</h2>
           <p style="line-height: 2">
-            Ahora escribiremos la etiqueta raíz del documento. <br />🔹 Todo el
-            contenido va dentro de ella. <br />🔹 lang="es" indica que el idioma
-            es español (importante para accesibilidad y SEO).
+            Encabezados (&lt;h1&gt; a &lt;h6&gt;) Sirven para títulos.
+            <br>&lt;h1&gt; es el título más importante (solo uno por página es recomendable).
+            <br>
+            &lt;h2&gt; a &lt;h6&gt; son subtítulos.
+            <br>
+            Se usan para organizar el contenido.
           </p>
-          <pre>&lt;html lang="es"&gt;</pre>
+          <pre>&lt;h1&gt;Escribe un titulo de tu preferencia&lt;/h1&gt;</pre>
         </div>
 
         <div class="paso">
-          <h2>Paso 3: Empieza tu HTML</h2>
+          <h2>Paso 3: Desarrolla tu HTML</h2>
           <p style="line-height: 2">
-            <strong>&lt;head&gt;</strong> contiene información sobre la página,
-            pero no visible directamente en el contenido.
+            <strong>Párrafos &lt;p&gt;</strong> Sirven para escribir texto normal.
           </p>
-          <pre>&lt;head&gt;</pre>
+          <pre>&lt;p&gt;Escribe un parrafo o una linea de texto de tu gusto&lt;/p&gt;</pre>
         </div>
 
         <div class="paso">
-          <h2>Paso 4: Empieza tu HTML</h2>
+          <h2>Paso 5: Desarrolla tu HTML</h2>
           <p style="line-height: 2">
-            🔹 Define la codificación de caracteres. <br>🔹 Permite usar tildes, ñ,
-            símbolos, etc..
+            <strong>Listas &lt;ol&gt;("Orden list" o "Lista Ordenada") y &lt;ul&gt;("Unordered List" o "Lista Desordenada")</strong><br>despues de elegir el tipo de lista se utiliza la <strong>etiqueta&lt;li&gt;</strong> que significa "list item" y es donde ira cada elemento de la lista. <br>A continuacion crea una lista con la cantidad de elementos que desees.
           </p>
-          <pre>&lt;meta charset="UTF-8"&gt;</pre>
-        </div>
-
-        <div class="paso">
-          <h2>Paso 5: Empieza tu HTML</h2>
-          <p style="line-height: 2">
-            Es el título que aparece en la pestaña del navegador.
-          </p>
-          <pre>&lt;title&gt;Escribe aqui el nombre que desees&lt;/title&gt;</pre>
+          <pre>&lt;ol&gt;<br>&lt;li&gt;Escribe el elemento que desees&lt;/li&gt;<br>&lt;/ol&gt;</pre>
         </div>
 
         <div class="paso">
           <h2>Paso 6: Empieza tu HTML</h2>
           <p style="line-height: 2">
-            Cierra la sección de configuración.
+            <strong>Enlaces &lt;a&gt;</strong> Permiten ir a otra página ya sea un sitio web diferente o una pagina web de tu propiedad. <br>href es el destino en el cual va la dirección del sitio web o nombre del archivo html.
+            <br>
+            Lo que escribes entre las etiquetas es lo que el usuario ve.
+            <h2>Intenta hacerlo tambien en un archivo HTML de tu PC</h2>
           </p>
-          <pre>&lt;/head>&gt;</pre>
+          <pre>&lt;a href="https://www.google.com"&gt;Escribe una palabra&lt;/a&gt;</pre>
+        </div>
+
+        <div class="paso">
+          <h2>Paso 7: Desarrolla tu HTML</h2>
+          <p style="line-height: 2">
+            Cierra la sección del Desarrollo.
+          </p>
+          <pre>&lt;/body&gt;</pre>
         </div>
 
         <div class="paso">
           <h2>Excelente</h2>
           <p style="line-height: 2">
-            Terminaste la configuracion de tu pagina web, puedes dar "Enter" o "Intro" pero no aparecera en pantalla ya que recordemos <strong>Estamos empezando y configurando la pagina</strong>.
+            Terminaste la configuracion de tu pagina web, puedes dar "Enter" o "Intro" y ver el resultado de tu codificación.
           </p>
           <h2>Regresa a los cursos</h2>
         </div>
@@ -255,7 +273,7 @@
         },
       );
 
-      editor.setValue("");
+      editor.setValue("Escribe aqui");
 
       editor.on("change", () => {
         const doc = iframe.contentDocument;
